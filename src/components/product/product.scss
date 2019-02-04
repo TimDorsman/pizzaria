@@ -1,0 +1,104 @@
+.product {
+    
+    &Tile {
+        border-radius: 5px;
+        width: 250px;
+        border: 1px solid black;
+        margin: 20px;
+        background: #FFF;
+        position: relative;
+        p, h4 {
+            color: #000;
+        }
+        p {
+            margin: 0;
+        }
+    }
+    &Container {
+        display: flex;
+        flex-direction: row;
+        flex-wrap: wrap;
+        margin-bottom: 50px;
+    }
+    &Top {
+        border-top-left-radius: 5px;
+        border-top-right-radius: 5px;
+        border-bottom: 1px solid black;
+        background: #ecebeb;
+        padding: 10px 5px;
+        min-height: 40px;
+    }
+    &Center {
+        overflow: hidden;
+    }
+    &Bottom {
+        display: flex;
+        flex-direction: column;
+        border-top: 1px solid black;
+    }
+    &Image {
+        width: 100%;
+        margin: 10px 0;
+        height: auto;
+        transition: transform .5s ease-in-out;
+        &:hover {
+            transform: scale(1.2);
+        }
+    }
+    &Name {
+        font-family: 'Teko', sans-serif;
+        font-size: 36px;
+        color: #FFF;
+        -webkit-text-stroke-width: .1px;
+        -webkit-text-stroke-color: black;
+        margin: 10px 0;
+    }
+    &Sale {
+        position: absolute;
+        top: 0;
+        right: 0;
+        width: 0;
+        height: 0;
+        border-top: 50px solid red;
+        border-left: 50px solid transparent;
+
+        span {
+            position: absolute;
+            top: -40px;
+            right: 0;
+            color: #FFF;
+            transform: rotate(45deg);
+        }
+    }
+    &Buy {
+        background-color: #ff8a04;
+        border: 1px solid grey;
+        color: #965c1a;
+        transition: background-color .5s, color .5s;
+        height: 40px;
+        font-size: 25px;
+
+        a {
+            text-decoration: none;
+            color: inherit;
+        }
+        &:hover {
+            background: #965c1a;
+            color: #ff8a04;
+        }
+        &:active {
+            transition: background-color .2s;
+            background: purple;
+        }
+    }
+}
+
+
+@keyframes crazyMode {
+    from {
+        transform: scale(1);
+    }
+    to {
+        transform: scale(5);
+    }
+}

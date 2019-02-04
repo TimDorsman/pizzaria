@@ -1,0 +1,13 @@
+.footer {
+    padding: 1rem;
+    background-color: #0084ff;
+    text-align: center;
+    position: absolute;
+    bottom: 0;
+    width: 100%;
+    &List {
+        margin: 0;
+        list-style-type: none;
+        padding: 0;
+    }
+}

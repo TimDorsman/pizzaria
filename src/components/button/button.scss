@@ -1,0 +1,41 @@
+@mixin button($width, $height, $background, $color) {
+    width: $width;
+    height: $height;
+    background: $background;
+    color: $color;
+    border: 1px solid black;
+}
+
+.button {
+    &Link {
+        text-decoration: none;
+    }
+
+    &Primary {
+        @include button(100px, 40px, #e42929, #FFF);
+        border-radius: 5px;
+        display: block;
+        transition: background .2s, color;
+        &:hover {
+            background: #FFF;
+            color: #e42929;
+        }
+    }
+}
+
+.new {
+    &Button {
+        display: block;
+        margin: auto;
+        position: absolute;
+        bottom: 20px;
+        left: 50%;
+        transform: translateX(-50%);
+
+        @media screen and (max-width: 900) {
+            position: relative;
+            transform: translate(50%, 50%);
+        }
+    }
+}
+

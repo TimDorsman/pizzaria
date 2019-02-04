@@ -1,0 +1,35 @@
+.slide {
+    &Show {
+        // width: 500px;
+        // height: 300px;
+        margin: auto;
+        &Image {
+            width: 100%;
+            height: 100%;
+            // display: none;
+            object-fit: cover;
+            &._show {
+                display: none;
+            }
+        }
+        &Item {
+            width: 500px;
+            height: 300px;
+            position: relative;
+        }
+        &Container {
+            width: 80vw;
+            margin: auto;
+        }
+    }
+    &Title {
+        text-shadow: 2px 2px #000;
+    }
+    &Name {
+        position: absolute;
+        left: 50%;
+        top: 50%;
+        transform: translate(-50%, -100%);
+        text-shadow: 2px 2px #000;
+    }
+}

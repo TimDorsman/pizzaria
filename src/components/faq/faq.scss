@@ -1,0 +1,32 @@
+.help {
+    list-style-type: none;
+    padding: 0;
+    margin: 0;
+    &Item {
+        &Click {
+            cursor: pointer;
+        }
+        div {
+            padding: 8px 40px;
+            border: 1px solid #3f82da;
+
+            p {
+                pointer-events: none;
+            }
+        }
+        div:nth-child(even) {
+            background: #FFF;
+
+            p {
+                color: #1263ce
+            }
+        }
+    }
+
+    &Container {
+        margin: 0 auto 20px;
+        height: 60%;
+        background: #1263ce;
+        margin-bottom: 100px;
+    }
+}

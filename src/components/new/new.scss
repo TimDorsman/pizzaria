@@ -1,0 +1,65 @@
+
+
+.new {
+    max-width: 1200px;
+    margin: 0 auto 100px;
+    width: 80vw;
+
+    &Container {
+        margin: 30px 0;
+        background: #e97b7b;
+        display: flex;
+        flex-direction: row;
+        
+        &._reverse {
+            flex-direction: row-reverse;
+
+            @media screen and (max-width: 900px) {
+                flex-direction: column-reverse;
+            }
+        }
+
+        @media screen and (max-width: 900px) {
+            flex-direction: column-reverse;
+        }
+    }
+    &Introduction {
+        position: relative;
+        width: calc(100% - 80px);
+        padding: 0 20px;
+
+        &Title {
+            text-align: center;
+        }
+        &Item {
+            text-align: center;
+        }
+
+        @media screen and (max-width: 900px) {
+            width: auto;
+            padding: 20px;
+        }
+    }
+    &Pizza {
+        width: 100%;
+        overflow: hidden;
+        max-height: 250px;
+        &Image {
+            width: 100%;
+            height: 100%;
+            max-width: 600px;
+            object-fit: cover;
+            transition: transform .3s; 
+
+            &:hover {
+                transform: scale(1.2);
+            }
+
+            @media screen and (max-width: 900px) {
+                max-width: none;
+            }
+
+        }
+    }
+}
+

@@ -1,0 +1,15 @@
+{
+    "presets": [
+      ["@babel/preset-env", { "modules": false }],
+      "@babel/preset-react",
+      ["@babel/preset-stage-2", { "loose": true, "decoratorsLegacy": true }]
+    ],
+    "plugins": [
+        ["@babel/plugin-proposal-decorators", { "legacy": true }],
+    ],
+    "env": {
+      "development": {
+        "plugins": ["react-hot-loader/babel"]
+      }
+    }
+  }
