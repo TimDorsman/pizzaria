@@ -2,18 +2,8 @@
     width: calc(100% - 30vw);
     margin: auto;
     background: red;
-    &Button {
-        height: 50px;
-        border: 1px solid grey;
-        background: #ff7b00;
-        color: #FFF;
-        border-radius: 10px;
-        transition: background-color .3s;
+    padding: 20px;
 
-        &:hover {
-            background-color: #d87607;
-        }
-    }
     &Header {
         margin: 0;
     }

@@ -38,11 +38,13 @@ export default class Introduction extends Component {
     render() {
         return (
             <div className="introduction">
-                <h2 className="introductionHeader">My name is {this.state.name}</h2>
-                <p>I created {this.state.shopname} in 2019 as a fun project but it evolved itself into a worldwide clothing outlet.
-                As an {this.state.age} year old this drastically changed my life for the better. I currently live in {this.state.city}, born and raised.
-                My plans in the future are becoming rich. Thats it. Don't need anything else, just money.</p>
-                <Button className="introductionButton" onClick={this.displayFood}>Click here to see my favourite food</Button>
+                <h2>El pizzarino</h2>
+                <p>started in 1965 in a Rijswijk's neighbourhood.
+                    Many locals would come for a delicious pizza after work or in their free time.
+                    Together with partners we have expanded and got numerous awards such as 'Fastest pizzachef 1996' and 'Worldwide pizza championship 2015' worldwide.
+                    Our plans for the future are enlarging the menu with chicken wings and other treats.
+                </p>
+                <Button class='buttonSecundary' link='/pizzas'>Click here to see my favourite food</Button>
                 {this.state.showFood ? <p>{this.state.food}</p> : ''}
                 {this.state.showFood ? <img src={this.state.image} className="introductionImage " width="auto" height="250" alt={this.state.food}/> : ''}
             </div>

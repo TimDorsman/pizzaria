@@ -2,6 +2,7 @@ import React, { Component } from 'react';
 import './cartlist.scss';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { toggleShoppingList } from '../../functions/toggleShoppingList'
+import Button from '../../components/button/button'
 
 export default class CartList extends Component {
     constructor(props) {
@@ -38,20 +39,24 @@ export default class CartList extends Component {
     }
 
     totalAmountPizza() {
-        let items = `[${localStorage.getItem('list')}]`;
-        let allPizzas = JSON.parse(items);
-        let total = 0; 
-        console.log(allPizzas);
-        allPizzas.forEach(item => {
-           total+= this.pricePizza(item.price, item.amount);
-        })
-
-        return total;
+        try {
+            let items = `[${localStorage.getItem('list')}]`;
+            let allPizzas = JSON.parse(items);
+            let total = 0; 
+            console.log(allPizzas);
+            allPizzas.forEach(item => {
+                total+= this.pricePizza(item.price, item.amount);
+            })
+            localStorage.setItem('total', total);
+            return total;
+        }
+        catch(e) {
+            console.log(e);
+        }
     }
 
     pricePizza(price, amount) {
-
-        return parseInt(price) * parseInt(amount);
+        return parseFloat(price) * parseFloat(amount);
     }
 
     localStorageUpdated() {
@@ -72,18 +77,20 @@ export default class CartList extends Component {
                     <FontAwesomeIcon icon="times" className='cartListClose fa-2x' onClick={toggleShoppingList}/>
                 </div>
                 <ul className='pizzaList'>
+                {!localStorage.getItem('list') ? <li>There are no items in your cart</li> : '' }
                     {this.state.pizzas[0] != null ? this.state.pizzas.map((pizza, i) => {
              return <li className='cartListItem' key={i} onClick={this.renderPizzasInList}>
                         <img src={require('../../images/' + pizza.img)} className='cartListImage'/>
                         <div>
                             <p>{pizza.name}</p>
-                            <p>{pizza.price} x {pizza.amount}</p>
-                            <p>{this.pricePizza(pizza.price, pizza.amount)}</p>
+                            <p>€{pizza.price} x <input defaultValue={pizza.amount} className='cartListInput'/></p>
+                            <p>€{this.pricePizza(pizza.price, pizza.amount)}</p>
                         </div>
                     </li>
                     }) : ''}
-                    <li className='classListTotal'><span>Total amount: </span>€{this.totalAmountPizza()}</li>
                 </ul>
+                
+                    {localStorage.getItem('list') ?<div className='checkout'><span className='cartListTotal'>Total amount: €{this.totalAmountPizza()}</span><Button linkClass='checkoutLink' class='buttonPrimary' link='/checkout'>Checkout</Button></div> : ''}
             </div>
         )
     }

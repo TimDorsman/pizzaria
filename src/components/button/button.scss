@@ -21,6 +21,19 @@
             color: #e42929;
         }
     }
+
+    &Secundary {
+        height: 50px;
+        border: 1px solid grey;
+        background: #ff7b00;
+        color: #FFF;
+        border-radius: 10px;
+        transition: background-color .3s;
+
+        &:hover {
+            background-color: #d87607;
+        }
+    }
 }
 
 .new {

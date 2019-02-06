@@ -14,9 +14,6 @@ export default class ComingUp extends Component {
             comingup: this.props.data,
         }
     }
-    fadeSlider() {
-        $('.slideShowImage').fadeOut(1000, () => {this.hide()})
-    }
     render() {
         let settings = {
             dots: true,
@@ -29,7 +26,6 @@ export default class ComingUp extends Component {
           }
         return (
             <div className='slideShowContainer'>
-                {this.fadeSlider()}
                 <Title title='Coming up:' className='slideTitle'>Coming up:</Title>
                 <div className='slideShow'>
                     <Slider {...settings}>                

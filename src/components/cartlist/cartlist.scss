@@ -3,12 +3,13 @@
     background: #f1eda8;
     border-radius: 10px;
     width: 80vw;
-    height: 80%;
+    height: 600px;
     transform: translate(-50%, -50%);
     z-index: 99999;
     top: 50%;
     left: 50%;
     border: 1px solid #FFF;
+    display: none;
 
     &Header {
         background: #df3939;
@@ -30,20 +31,54 @@
         padding: 10px 0;
         display: flex;
         align-items: center;
+        transition: border-bottom 1s linear;
+        &:hover {
+            border-bottom: 1px solid black;
+        }
 
         & > * > * {
             color: black;
         }
     }
 
+    &Input {
+        width: 25px;
+    }
+
     &Image {
-        width: 75px;
-        height: 75px;
+        width: 80px;
+        height: 84px;
+        margin-right: 20px;
+        
+        &:hover {
+            animation: shake 3s ease-in-out infinite;
+            transform: rotate(360deg);
+        }
     }
 }
 
 .pizzaList {
     overflow: auto;
     list-style-type: none;
-    height: 80%;
+    height: 75%;
+}
+
+.checkout {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0 40px;
+}
+
+
+@keyframes shake {
+    0% {
+        transform: rotateX(0deg);
+    }
+    50% {
+        transform: rotateX(360deg);
+    }
+    100% {
+        transform: rotateX(0deg);
+    }
 }
