@@ -1,0 +1,49 @@
+.cartList {
+    position: fixed;
+    background: #f1eda8;
+    border-radius: 10px;
+    width: 80vw;
+    height: 80%;
+    transform: translate(-50%, -50%);
+    z-index: 99999;
+    top: 50%;
+    left: 50%;
+    border: 1px solid #FFF;
+
+    &Header {
+        background: #df3939;
+        height: 50px;
+        border-top-left-radius: 10px;
+        border-top-right-radius: 10px;
+    }
+
+    &Close {
+        color: #FFF;
+        margin-left: auto;
+        display: block;
+        margin-left: calc(100% - 30px);
+        transform: translate(0, 25%);
+    }
+
+    &Item {
+        border-bottom: 1px solid #FFF;
+        padding: 10px 0;
+        display: flex;
+        align-items: center;
+
+        & > * > * {
+            color: black;
+        }
+    }
+
+    &Image {
+        width: 75px;
+        height: 75px;
+    }
+}
+
+.pizzaList {
+    overflow: auto;
+    list-style-type: none;
+    height: 80%;
+}

@@ -7,7 +7,7 @@ class Pizzas extends Component {
 		return (
 			<div className="App">
 				<div className="pizzaContainer">
-					<Pizza data={store}/>
+					<Pizza data={store} refs="child"/>
 				</div>
 			</div>
 		);

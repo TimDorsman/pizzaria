@@ -5,6 +5,7 @@
   "dependencies": {
     "@babel/plugin-proposal-decorators": "^7.3.0",
     "@fortawesome/fontawesome-svg-core": "^1.2.13",
+    "@fortawesome/free-brands-svg-icons": "^5.7.1",
     "@fortawesome/free-solid-svg-icons": "^5.7.0",
     "@fortawesome/react-fontawesome": "^0.1.4",
     "jquery": "^3.3.1",
