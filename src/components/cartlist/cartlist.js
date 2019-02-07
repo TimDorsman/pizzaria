@@ -10,7 +10,7 @@ export default class CartList extends Component {
         this.state = {
             pizzas: [],
             status: null,
-            amount: this.props.amount
+            amount: this.props.amount,
         }
         this.renderPizzasInList = this.renderPizzasInList.bind(this)
         this.localStorageUpdated = this.localStorageUpdated.bind(this)
@@ -83,7 +83,7 @@ export default class CartList extends Component {
                         <img src={require('../../images/' + pizza.img)} className='cartListImage'/>
                         <div>
                             <p>{pizza.name}</p>
-                            <p>€{pizza.price} x <input defaultValue={pizza.amount} className='cartListInput'/></p>
+                            <p>€{pizza.price} x {pizza.amount}</p>
                             <p>€{this.pricePizza(pizza.price, pizza.amount)}</p>
                         </div>
                     </li>

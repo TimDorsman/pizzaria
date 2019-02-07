@@ -14,7 +14,7 @@ export const store = [
         description: 'Juicy pizza fruity pizza with an enjoyable mixture of pineapple and ham',
         ingredients: 'Pineapple, tomato sauce, ham',
         price: '9.99',
-        img: 'pizza.jpg',
+        img: 'hawaii.jpg',
         new: false,
         sale: true,
         amount: 1

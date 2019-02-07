@@ -1,7 +1,6 @@
 import React, { Component } from 'react';
 import './pizza.scss';
 import $ from 'jquery';
-import CartList from '../../components/cartlist/cartlist';
 export default class Pizza extends Component {
 
     constructor(props) {
@@ -45,9 +44,8 @@ export default class Pizza extends Component {
             name: item.name,
             price: item.price,
             img: item.img,
-            amount: item.amount
+            amount: item.amount,
         };
-
         //transform the object into a string
         let strNewItem = JSON.stringify(newItem)
 
@@ -62,13 +60,10 @@ export default class Pizza extends Component {
 
             // localStorage.setItem('list', `${localStorage.getItem('list')}, ${strNewItem}`)
 
-            console.log(array);
 
             //loop over the array
             for(let i = 0; i < array.length; i++) {
 				//check if pizza is already in the list
-				console.log(array[i]);
-				console.log(newItem.name);
                 if(array[i].name === newItem.name) {
                     //+1 amount to the pizza thats in the list
                     array[i].amount += 1;
@@ -82,82 +77,26 @@ export default class Pizza extends Component {
                     //add the list to the localStorage
                     localStorage.setItem('list', replArray)
                     //leave the function
-                    console.log(localStorage.getItem('list'))
                     return false;
 				}
 				//If the loop hasn't found any results then add the pizza to the list
-                if(i == array.length - 1) {
-                    console.log('pizza is not in the list yet')
-                    console.log(array);
+                if(i === array.length - 1) {
                     //add new pizza to the array
                     array = JSON.parse(`[${localStorage.getItem('list')}]`);
-                    console.log(array);
                     array.push(newItem)
                     //remove square brackets so its not an array anymore
                     let strArray = JSON.stringify(array)
                     let replArray = strArray.replace(/[\[\]]+/g, '')
 
-                    console.log(replArray);
 
                     localStorage.setItem('list', replArray)
-                    console.log(localStorage.getItem('list'));
                 }
             }
         }
         //localStorage doesn't exist yet
         else {
             localStorage.setItem('list', strNewItem);
-            console.log('STORAGE DOESNT EXIST YET, CREATING STORAGE')
-            console.log(localStorage.getItem('list'))
         }
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-        // if(localStorage.getItem('list') !== null) {
-        //     let items = `[${localStorage.getItem('list')}]`;
-        //     let newItems = JSON.parse(items);
-        //     newItems.find((element, index) => {
-        //         // return element.name === newItem.name;
-        //         if(element.name === newItem.name) {
-        //             newItems[index].amount += 1
-
-        //             localStorage.setItem('list', `${localStorage.getItem('list')}, ${JSON.stringify(newItem)}`);
-
-        //         }
-        //     });
-        //     if(newItems.indexOf(newItem)) {
-        //         // newItem.amount = newItem.amount + 1;
-        //     }
-        //     else {
-        //     }
-        // }
-        // if(localStorage.getItem('list') && localStorage.getItem('list') !== null) {
-        //     localStorage.setItem('list', `${localStorage.getItem('list')}, ${JSON.stringify(newItem)}`);
-        // } else {
-        //     localStorage.setItem('list', `${JSON.stringify(newItem)}`);
-        // }
-        // let items = `[${localStorage.getItem('list')}]`;
-        // let newItems = JSON.parse(items);
-
     }
 
     render() {
