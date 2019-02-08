@@ -19,7 +19,8 @@ export default class Form extends Component {
             firstname: inputs[0].value,
             lastname: inputs[1].value,
             email: inputs[2].value,
-            phone: inputs[3].value
+            phone: inputs[3].value,
+            adress: inputs[4].value
         }
 
         console.log(userData)
@@ -66,9 +67,10 @@ export default class Form extends Component {
                         <input type='email' className='userInput' onChange={this.validate}/>
                         <span>Phone</span>
                         <input type='number' className='userInput' onChange={this.validate}/>
+                        <span>Adress</span>
+                        <input type='text' className='userInput' onChange={this.validate}/>
                 </div>
                 {this.state.continue ? <Button class='buttonPrimary' classLink='mg-left' link='/checkout/overview'>Submit</Button> : ''}
-
             </form>
         )
     }

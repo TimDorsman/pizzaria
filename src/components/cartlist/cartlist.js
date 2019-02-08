@@ -90,7 +90,7 @@ export default class CartList extends Component {
 					</li>
 					}) : ''}
 				</ul>
-					{localStorage.getItem('list') ?<div className='checkout'><span className='cartListTotal'>Total amount: €{this.totalAmountPizza()}</span><Button linkClass='checkoutLink' class='buttonPrimary' link='/checkout' onClick={this.saveTotalAmount}>Checkout</Button></div> : ''}
+					{localStorage.getItem('list') ?<div className='checkout'><span className='cartListTotal'>Total amount: €{this.totalAmountPizza()}</span><Button linkClass='checkoutLink' class='buttonPrimary' link={localStorage.getItem('user') ? '/checkout/overview' : '/checkout'} onClick={this.saveTotalAmount}>Checkout</Button></div> : ''}
 			</div>
 		)
 	}
