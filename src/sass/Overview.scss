@@ -1,0 +1,17 @@
+.overview {
+    width: 80vw;
+    max-width: 1200px;
+    margin: auto;
+    background: #f1eda8;
+    padding: 1px 20px;
+
+    &Bottom {
+        display: flex;
+        flex-direction: row;
+        align-items: center;
+    }
+
+    &Total {
+        text-shadow: 2px 2px black;
+    }
+}

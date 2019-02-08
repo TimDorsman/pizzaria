@@ -60,7 +60,7 @@ export const store = [
         amount: 1
     },
     {
-        name: 'Pulled Pork',
+        name: 'Pizza Pulled Pork',
         description: 'Delicious pulled pork, steamed and chopped up',
         ingredients: 'Pork, salt, pepper, onions, tomato sauce',
         price: '15.99',
@@ -70,7 +70,7 @@ export const store = [
         amount: 1
     },
     {
-        name: 'Chicken Wings',
+        name: 'Chicken Wings 6 piece',
         description: 'Juicy steamy chicken wings',
         ingredients: 'Chicken, barbeque sauce, pepper',
         price: '6',
@@ -102,5 +102,24 @@ export const comingUp = [
     {
         name: 'New York Style',
         url: 'newyork.jpg'
+    },
+]
+
+export const paymentOptions = [
+    {
+        name: 'Paypal',
+        img: 'paypal.png'
+    },
+    {
+        name: 'Creditcard',
+        img: 'creditcard.png'
+    },
+    {
+        name: 'Cash',
+        img: 'cash.png'
+    },
+    {
+        name: 'iDeal',
+        img: 'ideal.png'
     },
 ]

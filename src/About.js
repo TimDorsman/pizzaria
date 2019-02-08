@@ -10,7 +10,6 @@ class About extends Component {
 				<div className="content">
 					<Introduction name="Tim" age="20" city="Zoetermeer"/>
 				</div>
-				<Footer/>
 			</div>
 		);
 	}

@@ -2,8 +2,6 @@ import React, { Component } from 'react';
 import Title from '../../components/title/title';
 import Slider from "react-slick";
 
-import $ from 'jquery';
-
 import './comingup.scss';
 
 export default class ComingUp extends Component {

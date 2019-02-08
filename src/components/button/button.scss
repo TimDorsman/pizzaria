@@ -1,6 +1,6 @@
 @mixin button($width, $height, $background, $color) {
     width: $width;
-    height: $height;
+    min-height: $height;
     background: $background;
     color: $color;
     border: 1px solid black;
@@ -9,10 +9,12 @@
 .button {
     &Link {
         text-decoration: none;
+        display: block;
+        width: fit-content;
     }
 
     &Primary {
-        @include button(100px, 40px, #e42929, #FFF);
+        @include button(auto, 40px, #e42929, #FFF);
         border-radius: 5px;
         display: block;
         transition: background .2s, color;
@@ -45,10 +47,22 @@
         left: 50%;
         transform: translateX(-50%);
 
-        @media screen and (max-width: 900) {
+        @media screen and (max-width: 900px) {
+            display: block;
+            margin: auto;
             position: relative;
-            transform: translate(50%, 50%);
+            bottom: 20px;
+            left: 0;
+            transform: none;
         }
     }
+}
+
+.mg-left {
+    margin-left: auto;
+}
+
+.mg-right {
+    margin-right: auto;
 }
 

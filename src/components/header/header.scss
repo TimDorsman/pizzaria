@@ -33,6 +33,10 @@
         text-align: left;
         color: #FFF;
         text-decoration: none;
+
+        @media screen and (max-width: 380px) {
+            margin-left: 0;
+        }
         
         &Link { 
             color: #FFF;

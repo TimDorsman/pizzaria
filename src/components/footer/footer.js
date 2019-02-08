@@ -8,33 +8,31 @@ export default class Header extends Component {
         super(props);
         this.state = {
             footeritems: 
-            [
-                {
-                    item: {
-                        street: 'P.C Hooftstraat',
-                        postcode: '2834 KM',
-                    }
-                },
-                {
-                    item: {
-                        email: 'tim.dorsman@hotmail.com',
-                        tel: '31625248697'
-                    }
-                }
-            ]
+            {
+                street: 'P.C Hooftstraat',
+                postcode: '2834 KM',
+                email: 'tim.dorsman@hotmail.com',
+                tel: '+31 625248697'
+            }
         }
     }
 
+    
+
     render() {
-        const items = () => {
-            this.state.footeritems.map((item, i) => {
-                return item + i
-            })
-        }
         return (
             <footer className="footer">
                 <ul className="footerList">
-                    {items()}
+                    {Object.entries(this.state.footeritems).map((entry, i) => {
+                        let key = entry[0];
+                        let value = entry[1];
+
+                        return (
+                            <li key={i}>
+                            <p>{value}</p>
+                            </li>
+                        )
+                    })}
                 </ul>
             </footer>
         )

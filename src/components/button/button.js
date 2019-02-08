@@ -13,11 +13,11 @@ export default class Button extends Component {
         return (
             
             this.props.link ? 
-            <a href={this.props.link} className='buttonLink'>
+            <a href={this.props.link} className={`buttonLink ${this.props.classLink ? this.props.classLink : ''}`}>
             <button className={this.props.class} onClick={this.props.onClick}>{this.props.children}</button>
             </a>
             :
-            <button className={this.props.className} onClick={this.props.onClick}>{this.props.children}</button>
+            <button className={this.props.class} onClick={this.props.onClick}>{this.props.children}</button>
         )
     }
 }
