@@ -29,7 +29,6 @@ class App extends Component {
 			state: null,
 			amount: 300
 		})
-		console.log(this.state.amount);
 	}
 	render() {
 		return (

@@ -23,13 +23,11 @@ export default class Form extends Component {
             adress: inputs[4].value
         }
 
-        console.log(userData)
 
         const strUserData = JSON.stringify(userData);
 
         localStorage.setItem('user', strUserData)
 
-        console.log(localStorage.getItem('user'))
 
         window.location.href = 'checkout/overview';
 

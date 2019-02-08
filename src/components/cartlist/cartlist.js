@@ -28,10 +28,6 @@ export default class CartList extends Component {
 		}
 	}
 
-	saveTotalAmount() {
-		console.log(localStorage.getItem('total'));
-	}
-
 	renderPizzasInList() {
 		let items = `[${localStorage.getItem('list')}]`;
 		let allPizzas = JSON.parse(items);
