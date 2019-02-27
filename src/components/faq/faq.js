@@ -40,7 +40,7 @@ export default class Faq extends Component {
                 },
                 {
                     item: {
-                        question: 'Im alergic to certain ingredients.',
+                        question: 'Im allergic to certain ingredients.',
                         answer: 'You could write down in the comment what ingredients you\'re alergic to.'
                     }
                 }

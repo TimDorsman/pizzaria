@@ -14,33 +14,16 @@ import { faIgloo, faShoppingCart, faTimes } from '@fortawesome/free-solid-svg-ic
 library.add(faIgloo, faShoppingCart, faTimes)
 
 class App extends Component {
-	constructor() {
-		super();
-
-		this.state = {
-			input: null,
-			amount: 200
-		}
-        this.changeInput = this.changeInput.bind(this)
-	}
-
-	changeInput() {
-		this.setState ({
-			state: null,
-			amount: 300
-		})
-	}
 	render() {
 		return (
 		<Router>
 			<div className="App">
 				<Header />
-				<CartList data={localStorage.getItem('list')} amount={this.state.amount} refs="child"/>
+				<CartList data={localStorage.getItem('list')} refs="child"/>
 				<div className="content">
 					<RouteURL />
 				</div>
 				<Footer/>
-				{/* <Script url='cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.min.js' /> */}
 			</div>
 		</Router>
 		);

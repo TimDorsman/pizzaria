@@ -78,6 +78,16 @@ export const store = [
         new: true,
         sale: true,
         amount: 1
+    },
+    {
+        name: 'Peppernut Pizza',
+        description: 'Very peppery',
+        ingredients: 'Chicken, barbeque sauce, pepper',
+        price: '12',
+        img: 'pulledpork.jpg',
+        new: true,
+        sale: true,
+        amount: 1
     }
 ]
 

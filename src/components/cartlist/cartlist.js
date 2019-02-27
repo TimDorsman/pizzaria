@@ -11,6 +11,7 @@ export default class CartList extends Component {
 			pizzas: [],
 			status: null,
 			amount: this.props.amount,
+			test: []
 		}
 		this.renderPizzasInList = this.renderPizzasInList.bind(this)
 		this.localStorageUpdated = this.localStorageUpdated.bind(this)
@@ -32,7 +33,8 @@ export default class CartList extends Component {
 		let items = `[${localStorage.getItem('list')}]`;
 		let allPizzas = JSON.parse(items);
 		this.setState (() => ({
-			pizzas: [...allPizzas]
+			pizzas: [...allPizzas],
+			test: []
 		}))
 	}
 
@@ -48,8 +50,18 @@ export default class CartList extends Component {
 			return total;
 		}
 		catch(e) {
-			console.log(e);
+			console.warn(e);
 		}
+	}
+
+	removePizza = (e, index) => {
+		const list = this.state.pizzas
+		const newList = list.splice(index, 1)
+
+		this.setState((state) => {
+			return {pizzas: list};
+		}, () => { console.log(this.state.pizzas) });
+
 	}
 
 	pricePizza(price, amount) {
@@ -64,9 +76,11 @@ export default class CartList extends Component {
 			this.updateState(true)
 		}
 	}
+
 	updateState(value) {
 		this.setState({status: value})
 	}
+
 	render() {
 		return (
 			<div className='cartList'>
@@ -82,11 +96,13 @@ export default class CartList extends Component {
 							<p>{pizza.name}</p>
 							<p>€{pizza.price} x {pizza.amount}</p>
 							<p className='pizzaTotal'>€{this.pricePizza(pizza.price, pizza.amount)}</p>
+							<button data-id={i} onClick={(e) => {this.removePizza(e, i)}}>Remove pizza</button>
 						</div>
 					</li>
 					}) : ''}
 				</ul>
-					{localStorage.getItem('list') ?<div className='checkout'><span className='cartListTotal'>Total amount: €{this.totalAmountPizza()}</span><Button linkClass='checkoutLink' class='buttonPrimary' link={localStorage.getItem('user') ? '/checkout/overview' : '/checkout'} onClick={this.saveTotalAmount}>Checkout</Button></div> : ''}
+					{localStorage.getItem('list') ?<div className='checkout'><span className='cartListTotal'>Total amount: €{this.totalAmountPizza().toFixed(2)}</span>
+					<Button linkClass='checkoutLink' class='buttonPrimary' link={localStorage.getItem('user') ? '/checkout/overview' : '/checkout'} onClick={this.saveTotalAmount}>Checkout</Button></div> : ''}
 			</div>
 		)
 	}

@@ -24,7 +24,6 @@ export default class Header extends Component {
             <footer className="footer">
                 <ul className="footerList">
                     {Object.entries(this.state.footeritems).map((entry, i) => {
-                        let key = entry[0];
                         let value = entry[1];
 
                         return (

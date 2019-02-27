@@ -38,8 +38,9 @@ export default class Pizza extends Component {
     addToCart(e, item, i) {
 
         e.preventDefault();
+        if($(e.target).find('.pizzaAmount')[0].value <= 0)
+        return;
         const amount = $(e.target).find('.pizzaAmount')[0].value;
-        console.log(amount);
         //get data from clicked item and put it into an object
         const newItem = {
             name: item.name,
@@ -64,7 +65,7 @@ export default class Pizza extends Component {
 				//check if pizza is already in the list
                 if(array[i].name === newItem.name) {
                     //+1 amount to the pizza thats in the list
-                    array[i].amount += newItem.amount;
+                    array[i].amount = parseInt(array[i].amount) + parseInt(newItem.amount);
 
                     //convert array back into a string
                     let strArray = JSON.stringify(array);
