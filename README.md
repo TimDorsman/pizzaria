@@ -7,6 +7,10 @@ Very tasty pizzas fresh out of the oven.
 
 I mainly focused on the front-end and it's made with react
 
+#### Why is it called pizzaria and not pizzeria?
+
+You gotta be unique in this world, i don't wanna get copyright striked by *Antica Pizzeria Port'Alba*
+
 ## How do i run this project?
 
 ### Available Scripts
