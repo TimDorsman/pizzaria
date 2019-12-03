@@ -15,15 +15,15 @@ export default class New extends Component {
     render() {
         return (
             <div className='new'>
-                <Title title='Welcome!' className='slideTitle'/>
+                <Title title='Welcome!' className='slideTitle'>Welcome!</Title>
                 {store.map((pizza, i) => {
                 return pizza.new ? 
-                    <div className={this.isEven(this.index) ? 'newContainer _reverse' : '' + 'newContainer'} key={i}>
+                    <div className={`newContainer${this.isEven(this.index) ? ' _reverse' : ''}`} key={i}>
                         <div className='newIntroduction'>
                             <h3 className='newIntroductionTitle'>What's new in store?</h3>
                             <h4 className='newIntroductionItem'>{pizza.name}</h4>
                             <p>{pizza.description}</p>
-                            <Button link='/pizzas' type='' className='' class='buttonPrimary newButton'>Check it out!</Button>
+                            <Button link='/pizzas' customClass='buttonPrimary newButton'>Check it out!</Button>
                         </div>
                         <div className='newPizza'>
                             <img src={require('../../images/' + pizza.img)} className='newPizzaImage' alt={pizza.name}/>

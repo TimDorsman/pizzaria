@@ -24,7 +24,7 @@ export default class ComingUp extends Component {
           }
         return (
             <div className='slideShowContainer'>
-                <Title title='Coming up:' className='slideTitle'>Coming up:</Title>
+                <Title className='slideTitle'>Coming up:</Title>
                 <div className='slideShow'>
                     <Slider {...settings}>                
                         {this.state.comingup.map((item, i) => {

@@ -24,18 +24,21 @@
         display: block;
         margin-left: calc(100% - 30px);
         transform: translate(0, 25%);
+        cursor: pointer;
     }
 
     &Item {
         border-bottom: 3px solid #FFF;
         display: flex;
         align-items: center;
-        transition: border-bottom 1s linear;
+        transition: border-bottom 1s linear, background .5s linear ;
+        padding: 20px;
+
         &:hover {
-            border-bottom: 3px solid black;
+            background: #e2dd89;
         }
 
-        & > * > * {
+        & > * > p {
             color: black;
         }
     }
@@ -60,8 +63,11 @@
     &List {
         overflow: auto;
         list-style-type: none;
-        height: 75%;
+        height: 80%;
+        padding: 0;
+        margin-top: 0;
     }
+
     &Total {
         color: #eeff00;
         text-shadow: 1px 1px black;

@@ -31,7 +31,7 @@ export default class Overview extends Component {
                 <OrderList data={this.state.orderlist} />
                 <div className='overviewBottom'>
                     <h4 className='overviewTotal'>Total: €{this.state.total}</h4>
-                    <Button class='buttonPrimary' classLink='mg-left' link='/checkout/payment'>To payment</Button>
+                    <Button customClass='buttonPrimary' classLink='mg-left' link='/checkout/payment'>To payment</Button>
                 </div>
             </div>
         )

@@ -51,7 +51,7 @@ export const store = [
     },
     {
         name: 'Pizza Cheesey',
-        description: 'Beautiful cheesey pizza',
+        description: 'Smooth dutch Gouda cheese with leafs of pesto and dried with olive oil.',
         ingredients: 'Pesto leaf, nuts, tomato sauce',
         price: '18.50',
         img: 'cheesepizza.jpg',
@@ -71,7 +71,7 @@ export const store = [
     },
     {
         name: 'Chicken Wings 6 piece',
-        description: 'Juicy steamy chicken wings',
+        description: 'Juicy steamy chicken wings fresh from the stove, marinated in barbeque sauce.',
         ingredients: 'Chicken, barbeque sauce, pepper',
         price: '6',
         img: 'chickenwings.jpg',
@@ -80,11 +80,11 @@ export const store = [
         amount: 1
     },
     {
-        name: 'Peppernut Pizza',
-        description: 'Very peppery',
+        name: 'Sausage Crust Pizza',
+        description: 'One of the most sold and unique pizzas here at El Pizzarino. Fresh from the butcher.',
         ingredients: 'Chicken, barbeque sauce, pepper',
         price: '12',
-        img: 'pulledpork.jpg',
+        img: 'sausagepizza.jpg',
         new: true,
         sale: true,
         amount: 1

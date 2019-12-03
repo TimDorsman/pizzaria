@@ -25,7 +25,8 @@
     display: flex;
     flex-direction: row;
     flex-wrap: wrap;
-    margin: 0;
+    margin: auto;
+    max-width: 1200px;
 
     &Item {
         padding:  10px 20px;
@@ -33,6 +34,11 @@
         text-align: left;
         color: #FFF;
         text-decoration: none;
+        transition: background .3s linear;
+
+        &:hover {
+            background: #474343
+        }
 
         @media screen and (max-width: 380px) {
             margin-left: 0;
@@ -41,9 +47,6 @@
         &Link { 
             color: #FFF;
             text-decoration: none;
-        }
-        &:hover {
-            background: #474343
         }
     }
 }

@@ -21,7 +21,6 @@ export default class Payment extends Component {
 
     isOptionChecked() {
         const radio = document.querySelectorAll('.paymentRadio');
-        let isChecked = false;
 
         for(let i = 0; i < radio.length; i++) {
             if(radio[i].checked) {
@@ -45,10 +44,9 @@ export default class Payment extends Component {
                         </label>
                     </li>
                 })}
-                    
                 </ul>
                     {this.state.isChecked ? 
-                        <Button link='/checkout/confirmation' classLink='mg-left' class='buttonPrimary'>Confirm</Button>
+                        <Button link='/checkout/confirmation' classLink='mg-left' customClass='buttonPrimary'>Confirm</Button>
                     : ''}
             </div>
         )

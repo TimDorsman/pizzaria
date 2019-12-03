@@ -5,10 +5,8 @@ import './sass/Pizza.scss';
 class Pizzas extends Component {
 	render() {
 		return (
-			<div className="App">
-				<div className="pizzaContainer">
-					<Pizza data={store} refs="child"/>
-				</div>
+			<div className="pizzaContainer">
+				<Pizza data={store} refs="child" />
 			</div>
 		);
 	}

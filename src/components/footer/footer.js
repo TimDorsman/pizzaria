@@ -12,7 +12,7 @@ export default class Header extends Component {
                 street: 'P.C Hooftstraat',
                 postcode: '2834 KM',
                 email: 'tim.dorsman@hotmail.com',
-                tel: '+31 625248697'
+                tel: '+31624849603'
             }
         }
     }

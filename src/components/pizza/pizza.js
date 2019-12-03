@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import './pizza.scss';
 import $ from 'jquery';
+import Button from '../button/button';
 export default class Pizza extends Component {
 
     constructor(props) {
@@ -16,6 +17,11 @@ export default class Pizza extends Component {
         this.hideCover = this.hideCover.bind(this)
         this.addToCart = this.addToCart.bind(this)
     }
+
+    componentDidMount() {
+        console.log(this.props.data);
+    }
+
     showCover(e) {
         $(e.target).siblings('.pizzaCover').fadeIn();
     }
@@ -23,7 +29,7 @@ export default class Pizza extends Component {
     hideCover(e) {
         $(e.target).fadeOut();
 	}
-	
+
 	findIndex(el) {
 
 		//transform the localStorage into an array
@@ -35,8 +41,7 @@ export default class Pizza extends Component {
 		return array
 	}
 
-    addToCart(e, item, i) {
-
+    addToCart(e, item) {
         e.preventDefault();
         if($(e.target).find('.pizzaAmount')[0].value <= 0)
         return;
@@ -48,8 +53,12 @@ export default class Pizza extends Component {
             img: item.img,
             amount: amount,
         };
+
+        console.log(newItem);
         //transform the object into a string
         let strNewItem = JSON.stringify(newItem)
+
+        console.log(strNewItem);
 
         //If localStorage exists
         if(localStorage.getItem('list') != null) {
@@ -61,11 +70,12 @@ export default class Pizza extends Component {
             let array = JSON.parse(items);
 
             //loop over the array
-            for(let i = 0; i < array.length; i++) {
-				//check if pizza is already in the list
-                if(array[i].name === newItem.name) {
+
+            array.forEach((item, i) => {
+                //check if pizza is already in the list
+                if(item.name === newItem.name) {
                     //+1 amount to the pizza thats in the list
-                    array[i].amount = parseInt(array[i].amount) + parseInt(newItem.amount);
+                    item.amount = parseInt(item.amount) + parseInt(newItem.amount);
 
                     //convert array back into a string
                     let strArray = JSON.stringify(array);
@@ -77,8 +87,8 @@ export default class Pizza extends Component {
                     localStorage.setItem('list', replArray)
                     //leave the function
                     return false;
-				}
-				//If the loop hasn't found any results then add the pizza to the list
+                }
+                //If the loop hasn't found any results then add the pizza to the list
                 if(i === array.length - 1) {
                     //add new pizza to the array
                     array = JSON.parse(`[${localStorage.getItem('list')}]`);
@@ -87,10 +97,9 @@ export default class Pizza extends Component {
                     let strArray = JSON.stringify(array)
                     let replArray = strArray.replace(/[\[\]]+/g, '')
 
-
                     localStorage.setItem('list', replArray)
                 }
-            }
+            })
         }
         //localStorage doesn't exist yet
         else {
@@ -117,7 +126,8 @@ export default class Pizza extends Component {
                     <p>{item.description}</p>
                     <div className='pizzaInputs'>
                         <input type='number' defaultValue='1' className='pizzaAmount'/>
-                        <button type="submit" className='pizzaButton'>Add to cart</button>
+                        {/* <button type="submit" className='pizzaButton'>Add to cart</button> */}
+                        <Button customClass='pizzaButton' type='submit'>Add to cart</Button>
                     </div>
                 </div>
             </form>

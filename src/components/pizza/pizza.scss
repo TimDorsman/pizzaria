@@ -1,23 +1,25 @@
 .pizza {
-    width: 250px;
-    margin: 15px;
+    margin: auto 0;
     background: #e65c00;  /* fallback for old browsers */
     background: -webkit-linear-gradient(to top, #F9D423, #e65c00);  /* Chrome 10-25, Safari 5.1-6 */
     background: linear-gradient(to top, #F9D423, #e65c00); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
     position: relative;
-    padding-bottom: 40px;
+    height: 100%;
+    box-sizing: border-box;
+    padding-bottom: 20px;
+
     &Top {
         position: relative;
         width: 100%;
         height: 200px;
+        overflow: hidden;
     }
 
     &Bottom {
         padding: 0 20px;
-
-        p {
-            word-break: break-all;
-        }
+        height: calc(100% - 200px);
+        display: flex;
+        flex-direction: column;
     }
 
     &Name {
@@ -32,12 +34,15 @@
         z-index: 2;
         width: fit-content;
     }
-    
+
     &Image {
-        height: 200px;
-        width: 100%;
+        height: 120%;
+        width: 120%;
         transition: transform .5s ease-in-out;
+        overflow: hidden;
+        object-position: -50% center;
     }
+
     &Sale {
         width: 0;
         height: 0;
@@ -55,17 +60,19 @@
             transform: rotate(45deg);
         }
     }
+
     &Amount {
         width: 40px;
         height: 25px;
         padding-left: 5px;
     }
+
     &Inputs {
-        position: absolute;
-        bottom: 5px;
         display: flex;
         flex-direction: row;
+        margin-top: auto;
     }
+
     &Ingredients, .pizzaIngredientsTitle, .pizzaPrice {
         pointer-events: none;
     }
@@ -73,6 +80,7 @@
         color: #F9D423;
         text-align: center;
     }
+
     &Cover {
         position: absolute;
         background: rgba(0, 0, 0, 0.5);

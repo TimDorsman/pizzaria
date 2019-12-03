@@ -44,7 +44,7 @@ export default class Introduction extends Component {
                     Together with partners we have expanded and got numerous awards such as 'Fastest pizzachef 1996' and 'Worldwide pizza championship 2015' worldwide.
                     Our plans for the future are enlarging the menu with chicken wings and other treats.
                 </p>
-                <Button class='buttonSecundary' link='/pizzas'>Check out what we sell</Button>
+                <Button customClass='buttonSecundary' link='/pizzas'>Check out what we sell</Button>
                 {this.state.showFood ? <p>{this.state.food}</p> : ''}
                 {this.state.showFood ? <img src={this.state.image} className="introductionImage " width="auto" height="250" alt={this.state.food}/> : ''}
             </div>

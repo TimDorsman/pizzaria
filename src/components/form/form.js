@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
-import  './form.scss';
+import './form.scss';
 import Button from '../../components/button/button'
+import Title from '../title/title';
 
 export default class Form extends Component {
     constructor(props) {
@@ -40,7 +41,7 @@ export default class Form extends Component {
         inputs.forEach(el => arr.push(el))
 
         const results = arr.filter(input => input.value !== '');
-        if(results.length === inputs.length) {
+        if (results.length === inputs.length) {
             this.setState({
                 continue: true
             })
@@ -54,22 +55,25 @@ export default class Form extends Component {
 
     render() {
         return (
-            <form onSubmit={this.saveUserData} className='form' onSubmit={(e)=> {this.saveUserData(e)}}>
-                <div className='formInputs'>
+            <>
+                <Title className='slideTitle'>Hello</Title>
+                <form onSubmit={this.saveUserData} className='form' onSubmit={(e) => { this.saveUserData(e) }}>
+                    <div className='formInputs'>
                         <span>Firstname</span>
-                        <input type='text' className='userInput' onChange={this.validate}/>
+                        <input type='text' className='userInput' onChange={this.validate} />
                         <span>Lastname</span>
-                        <input type='text' className='userInput' onChange={this.validate}/>
+                        <input type='text' className='userInput' onChange={this.validate} />
 
                         <span>E-mail</span>
-                        <input type='email' className='userInput' onChange={this.validate}/>
+                        <input type='email' className='userInput' onChange={this.validate} />
                         <span>Phone</span>
-                        <input type='number' className='userInput' onChange={this.validate}/>
+                        <input type='number' className='userInput' onChange={this.validate} />
                         <span>Adress</span>
-                        <input type='text' className='userInput' onChange={this.validate}/>
-                </div>
-                {this.state.continue ? <Button class='buttonPrimary' classLink='mg-left' link='/checkout/overview'>Submit</Button> : ''}
-            </form>
+                        <input type='text' className='userInput' onChange={this.validate} />
+                        {this.state.continue ? <Button customClass='buttonPrimary buttonRight' classLink='mg-left' link='/checkout/overview'>Submit</Button> : ''}
+                    </div>
+                </form>
+            </>
         )
     }
 }
