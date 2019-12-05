@@ -5,9 +5,33 @@
     position: absolute;
     bottom: 0;
     width: 100%;
+    display: flex;
+    justify-content: space-around;
+
     &List {
         margin: 0;
         list-style-type: none;
         padding: 0;
+    }
+}
+
+.newsLetter {
+    &Title {
+        font-weight: bold;
+    }
+
+    &Input {
+        padding: 5px;
+
+        &::placeholder {
+            color: #cfcece;
+        }
+    }
+
+    &Button {
+        margin-top: 10px;
+        margin-left: auto;
+        display: block;
+        width: 50%;
     }
 }

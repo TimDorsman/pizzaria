@@ -10,7 +10,7 @@ export default class UserInfo extends Component {
             data: this.props.data
         }
     }
-    
+
     render() {
         return (
             <div className='userinfo'>

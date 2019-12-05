@@ -81,7 +81,7 @@ export default class Pizza extends Component {
                     let strArray = JSON.stringify(array);
 
                     //remove square brackets so its not an array anymore
-                    let replArray = strArray.replace(/[\[\]]+/g, '')
+                    let replArray = strArray.replace(/[[\]]+/g, '')
 
                     //add the list to the localStorage
                     localStorage.setItem('list', replArray)
@@ -95,7 +95,7 @@ export default class Pizza extends Component {
                     array.push(newItem)
                     //remove square brackets so its not an array anymore
                     let strArray = JSON.stringify(array)
-                    let replArray = strArray.replace(/[\[\]]+/g, '')
+                    let replArray = strArray.replace(/[[\]]+/g, '')
 
                     localStorage.setItem('list', replArray)
                 }
@@ -125,9 +125,9 @@ export default class Pizza extends Component {
                 <div className='pizzaBottom'>
                     <p>{item.description}</p>
                     <div className='pizzaInputs'>
-                        <input type='number' defaultValue='1' className='pizzaAmount'/>
+                        <input type='number' defaultValue='' placeholder='Amount' className='pizzaAmount'/>
                         {/* <button type="submit" className='pizzaButton'>Add to cart</button> */}
-                        <Button customClass='pizzaButton' type='submit'>Add to cart</Button>
+                        <Button customClass='pizzaButton buttonPrimary' type='submit'>Add to cart</Button>
                     </div>
                 </div>
             </form>

@@ -15,7 +15,7 @@ export default class New extends Component {
     render() {
         return (
             <div className='new'>
-                <Title title='Welcome!' className='slideTitle'>Welcome!</Title>
+                <Title title='Welcome!' className='slideTitle slideTitleHome'>Welcome!</Title>
                 {store.map((pizza, i) => {
                 return pizza.new ? 
                     <div className={`newContainer${this.isEven(this.index) ? ' _reverse' : ''}`} key={i}>

@@ -1,5 +1,24 @@
 .slide {
     &Title {
         text-shadow: 2px 2px #000;
+
+        &Home {
+            position: relative;
+            animation: slideIn .6s linear;
+        }
+    }
+}
+
+@keyframes slideIn {
+    from {
+        opacity: 0;
+        right: 20px;
+        bottom: 5px;
+    }
+
+    to {
+        opacity: 1;
+        right: 0;
+        bottom: 0;
     }
 }

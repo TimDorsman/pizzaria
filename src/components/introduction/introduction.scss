@@ -1,8 +1,19 @@
+
 .introduction {
-    width: calc(100% - 30vw);
     margin: auto;
-    background: red;
     padding: 20px;
+    border: 10px dashed gray;
+    background: rgba(255, 255, 255, 0.8);
+    font-family: 'Fira Sans', sans-serif;
+
+    > * {
+        color: #000;
+    }
+
+    &Button {
+        margin-top: 50px;
+        margin-left: auto;
+    }
 
     &Header {
         margin: 0;

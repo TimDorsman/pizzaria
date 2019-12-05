@@ -1,6 +1,5 @@
 import React, { Component } from 'react';
 import Form from './components/form/form'
-import Title from './components/title/title';
 
 export default class Checkout extends Component {
 

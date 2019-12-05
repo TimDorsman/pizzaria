@@ -1,7 +1,5 @@
 .slide {
     &Show {
-        // width: 500px;
-        // height: 300px;
         margin: auto;
         &Image {
             width: 100%;
@@ -18,8 +16,8 @@
             position: relative;
         }
         &Container {
-            width: 80vw;
             margin: auto;
+            border-radius: 40px;
         }
     }
     &Title {

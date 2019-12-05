@@ -1,0 +1,33 @@
+.user {
+    &Input {
+        width: 100%;
+        padding-left: 5px;
+        height: 30px;
+        margin-bottom: 20px;
+        font-size: 14px;
+        background: transparent;
+        border: 0;
+        border-bottom: 1px solid black;
+        outline: none;
+    }
+}
+
+.formLabel {
+    position: relative;
+    top: 27px;
+    transition: top .3s linear, color .3s ease-in;
+    margin-left: 5px;
+
+    &Focus {
+        color: #FFF;
+        top: 0;
+    }
+}
+
+/* Change the white to any color ;) */
+input:-webkit-autofill,
+input:-webkit-autofill:hover, 
+input:-webkit-autofill:focus, 
+input:-webkit-autofill:active  {
+    -webkit-box-shadow: 0 0 0 30px 0 inset !important;
+}

@@ -39,7 +39,7 @@ export default class Payment extends Component {
             return  <li className='option' key={i}>
                         <label for={option.name} className='optionLabel'>
                             <input type="radio" id={option.name}defaultValue={option.name} name='payment' className='paymentRadio' onClick={this.isOptionChecked}/>
-                            <img src={require(`./images/${option.img}`)} className='paymentImage' />
+                            <img src={require(`./images/${option.img}`)} className='paymentImage' alt={option.name} />
                             <p>{option.name}</p>
                         </label>
                     </li>

@@ -4,6 +4,8 @@
     background: #f1eda8;
     padding: 20px;
     margin: auto;
+    border-radius: 10px;
+
     &Left, &Right {
         display: flex;
         flex-direction: column;
@@ -19,11 +21,3 @@
     }
 }
 
-.user {
-    &Input {
-        width: 100%;
-        padding-left: 5px;
-        height: 30px;
-        margin-bottom: 10px;
-    }
-}

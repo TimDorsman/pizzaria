@@ -5,7 +5,7 @@ export default class Confirmation extends Component {
     render() {
         return (
             <div className='confirmation'>
-                <img src={require('./images/confirmation.png')}  className='confirmationImage'/>
+                <img src={require('./images/confirmation.png')}  className='confirmationImage' alt='confirmation'/>
             </div>
         )
     }

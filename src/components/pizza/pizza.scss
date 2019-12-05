@@ -1,95 +1,125 @@
 .pizza {
-    margin: auto 0;
-    background: #e65c00;  /* fallback for old browsers */
-    background: -webkit-linear-gradient(to top, #F9D423, #e65c00);  /* Chrome 10-25, Safari 5.1-6 */
-    background: linear-gradient(to top, #F9D423, #e65c00); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
-    position: relative;
-    height: 100%;
-    box-sizing: border-box;
-    padding-bottom: 20px;
+	margin: auto 0;
+	background: #e65c00; /* fallback for old browsers */
+	background: -webkit-linear-gradient(to top, #f9d423, #e65c00); /* Chrome 10-25, Safari 5.1-6 */
+	background: linear-gradient(
+		to top,
+		#f9d423,
+		#e65c00
+	); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+	position: relative;
+	height: 100%;
+	box-sizing: border-box;
+	padding-bottom: 20px;
 
-    &Top {
-        position: relative;
-        width: 100%;
-        height: 200px;
-        overflow: hidden;
-    }
+	&Top {
+		position: relative;
+		width: 100%;
+		height: 200px;
+		overflow: hidden;
+	}
 
-    &Bottom {
-        padding: 0 20px;
-        height: calc(100% - 200px);
-        display: flex;
-        flex-direction: column;
-    }
+	&Bottom {
+		padding: 0 20px;
+		height: calc(100% - 200px);
+		display: flex;
+		flex-direction: column;
+	}
 
-    &Name {
-        position: absolute;
-        left: 50%;
-        top: 50%;
-        transform: translate(-50%, -50%);
-        width: 100%;
-        text-align: center;
-        text-shadow: 2px 2px #000;
-        margin: 0;
-        z-index: 2;
-        width: fit-content;
-    }
+	&Name {
+		position: absolute;
+		left: 50%;
+		top: 50%;
+		transform: translate(-50%, -50%);
+		width: 100%;
+		text-align: center;
+		text-shadow: 2px 2px #000;
+		margin: 0;
+		z-index: 2;
+		width: fit-content;
+	}
 
-    &Image {
-        height: 120%;
-        width: 120%;
-        transition: transform .5s ease-in-out;
-        overflow: hidden;
-        object-position: -50% center;
-    }
+	&Image {
+		height: 120%;
+		width: 120%;
+		transition: transform 0.5s ease-in-out;
+		overflow: hidden;
+		object-position: -50% center;
+	}
 
-    &Sale {
-        width: 0;
-        height: 0;
-        border-top: 50px solid red;
-        border-left: 50px solid transparent;
-        position: absolute;
-        right: 0;
+	&Sale {
+		width: 0;
+		height: 0;
+		border-top: 50px solid red;
+		border-left: 50px solid transparent;
+		position: absolute;
+		right: 0;
 
-        &Text {
-            color: #FFF;
-            position: absolute;
-            top: absolute;
-            right: 0px;
-            bottom: 23px;
-            transform: rotate(45deg);
+		&Text {
+			color: #fff;
+			position: absolute;
+			top: absolute;
+			right: 0px;
+			bottom: 23px;
+			transform: rotate(45deg);
+		}
+	}
+
+	&Amount {
+		width: 80px;
+		height: 25px;
+		padding-left: 5px;
+		height: 100%;
+		box-sizing: border-box;
+		margin-right: auto;
+		background: transparent;
+		border: 0;
+		font-size: 24px;
+		outline: none;
+        border-bottom: 1px solid black;
+        transition: border-bottom .3s linear;
+
+
+        &::placeholder {
+            font-size: 16px;
         }
-    }
 
-    &Amount {
-        width: 40px;
-        height: 25px;
-        padding-left: 5px;
-    }
+		&::-webkit-inner-spin-button,
+		&::-webkit-outer-spin-button {
+			-webkit-appearance: none;
+			margin: 0;
+		}
 
-    &Inputs {
-        display: flex;
-        flex-direction: row;
-        margin-top: auto;
-    }
+		&:focus {
+			border-bottom: 1px solid #FFF;
+		}
+	}
 
-    &Ingredients, .pizzaIngredientsTitle, .pizzaPrice {
-        pointer-events: none;
-    }
-    &Price {
-        color: #F9D423;
-        text-align: center;
-    }
+	&Inputs {
+		display: flex;
+		flex-direction: row;
+		margin-top: auto;
+	}
 
-    &Cover {
-        position: absolute;
-        background: rgba(0, 0, 0, 0.5);
-        z-index: 10;
-        top: 0;
-        width: 100%;
-        height: 200px;
-        display: none;
-        padding: 0 10px;
-        box-sizing: border-box;
-    }
+	&Ingredients,
+	.pizzaIngredientsTitle,
+	.pizzaPrice {
+		pointer-events: none;
+	}
+	&Price {
+		color: #f9d423;
+		text-align: center;
+	}
+
+	&Cover {
+		position: absolute;
+		background: rgba(0, 0, 0, 0.5);
+		z-index: 10;
+		top: 0;
+		width: 100%;
+		height: 200px;
+		display: none;
+		padding: 0 10px;
+		box-sizing: border-box;
+	}
 }
