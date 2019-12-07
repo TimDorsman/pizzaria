@@ -1,10 +1,5 @@
-@mixin button($width, $height, $background, $color) {
-	width: $width;
-	min-height: $height;
-	background: $background;
-	color: $color;
-	border: 1px solid black;
-}
+@import '../../general/colors.scss';
+@import '../../general/mixins.scss';
 
 button {
 	padding: 0 10px;
@@ -17,14 +12,14 @@ button {
 	}
 
 	&Primary {
-		@include button(auto, 40px, #e42929, #fff);
+		@include button(auto, 40px, $primary-red, $white);
 		border-radius: 5px;
 		display: block;
         transition: background 0.2s, color;
 
 		&:hover {
-			background: #fff;
-			color: #e42929;
+			background: $white;
+			color: $primary-red;
 		}
 	}
 
@@ -32,7 +27,7 @@ button {
 		height: 50px;
 		border: 1px solid grey;
 		background: #ff7b00;
-		color: #fff;
+		color: $white;
 		border-radius: 10px;
 		transition: background-color 0.3s;
 

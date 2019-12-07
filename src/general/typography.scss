@@ -1,36 +1,38 @@
+@import '../general/colors.scss';
+
 @mixin h1() {
     font-size: 48px;
-    color: #FFF;
+    color: $white;
 }
 
 @mixin h2() {
     font-size: 36px;
-    color: #FFF;
+    color: $white;
 }
 
 @mixin h3() {
     font-size: 24px;
-    color: #FFF;
+    color: $white;
 }
 
 @mixin h4() {
     font-size: 20px;
-    color: #FFF;
+    color: $white;
 }
 
 @mixin h5() {
     font-size: 18px;
-    color: #FFF;
+    color: $white;
 }
 
 @mixin p() {
     font-size: 16px;
-    color: #FFF;
+    color: $white;
 }
 
 @mixin label() {
     font-size: 12px;
-    color: #FFF;
+    color: $white;
 }
 
 @mixin button {

@@ -131,7 +131,7 @@ export default class CartList extends Component {
 					</ul>
 					{localStorage.getItem('list') ?
 						<div className='checkout'>
-							<span className='cartListTotal'>Total amount: €{this.totalAmountPizza().toFixed(2)}</span>
+							<span className='cartListTotal'>Amount: €{this.totalAmountPizza().toFixed(2)}</span>
 							<Button customClass='buttonPrimary checkoutErase' onClick={this.clearCartList}><FontAwesomeIcon icon='undo' /></Button>
 							<Button linkClass='checkoutLink' customClass='buttonPrimary' link={localStorage.getItem('user') ? '/checkout/overview' : '/checkout'} onClick={this.saveTotalAmount}>Checkout</Button>
 						</div>

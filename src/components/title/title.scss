@@ -1,3 +1,5 @@
+@import '../../general/mixins.scss';
+
 .slide {
     &Title {
         text-shadow: 2px 2px #000;
@@ -5,6 +7,14 @@
         &Home {
             position: relative;
             animation: slideIn .6s linear;
+        }
+    }
+}
+
+@include Phone {
+    .slide {
+        &Title {
+            padding-left: 10px;
         }
     }
 }
