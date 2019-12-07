@@ -46,7 +46,7 @@ export default class Payment extends Component {
                 })}
                 </ul>
                     {this.state.isChecked ? 
-                        <Button link='/checkout/confirmation' classLink='mg-left' customClass='buttonPrimary'>Confirm</Button>
+                        <Button link='/checkout/confirmation' linkClass='mg-left' customClass='buttonPrimary'>Confirm</Button>
                     : ''}
             </div>
         )

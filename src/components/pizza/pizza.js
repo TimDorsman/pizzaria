@@ -30,7 +30,7 @@ export default class Pizza extends Component {
         $(e.target).fadeOut();
 	}
 
-	findIndex(el) {
+	findIndex() {
 
 		//transform the localStorage into an array
 		let items = `[${localStorage.getItem('list')}]`;
@@ -54,11 +54,9 @@ export default class Pizza extends Component {
             amount: amount,
         };
 
-        console.log(newItem);
         //transform the object into a string
         let strNewItem = JSON.stringify(newItem)
 
-        console.log(strNewItem);
 
         //If localStorage exists
         if(localStorage.getItem('list') != null) {
@@ -110,7 +108,7 @@ export default class Pizza extends Component {
     render() {
         return (
             this.state.pizzas.map((item, i) => {
-     return <form key={i} className='pizza' onSubmit={(e)=> {this.addToCart(e, item, i)}}>
+    return <form key={i} className='pizza' onSubmit={(e)=> {this.addToCart(e, item, i)}}>
                 <div className='pizzaTop'>
 
                     { item.sale ? (<div className='pizzaSale'><span className='pizzaSaleText'>Sale!</span></div>) : '' }

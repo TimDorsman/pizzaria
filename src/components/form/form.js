@@ -61,7 +61,7 @@ export default class Form extends Component {
                         <Input type='email' customClass='userInput' formInput onChange={this.validate} name='E-mail' />
                         <Input type='number' customClass='userInput' formInput onChange={this.validate} name='Phone' />
                         <Input type='text' customClass='userInput' formInput onChange={this.validate} name='Adress' />
-                        {this.state.continue ? <Button customClass='buttonPrimary buttonRight' classLink='mg-left' link='/checkout/overview'>Submit</Button> : ''}
+                        {this.state.continue ? <Button customClass='buttonPrimary buttonRight' linkClassk='mg-left' link='/checkout/overview'>Submit</Button> : ''}
                     </div>
                 </form>
             </>

@@ -4,7 +4,6 @@ import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { toggleShoppingList } from '../../functions/toggleShoppingList'
 import Button from '../../components/button/button'
 import Arrow from '../../images/arrow-down.png';
-import ReactDOM from 'react-dom';
 
 export default class CartList extends Component {
 	constructor(props) {
@@ -15,11 +14,10 @@ export default class CartList extends Component {
 			amount: this.props.amount,
 			test: []
 		}
-		this.renderPizzasInList = this.renderPizzasInList.bind(this)
 		this.localStorageUpdated = this.localStorageUpdated.bind(this)
 	}
 
-	componentDidMount(e) {
+	componentDidMount() {
 		if (typeof window !== 'undefined') {
 			let items = `[${localStorage.getItem('list')}]`;
 			let allPizzas = JSON.parse(items);
@@ -28,32 +26,8 @@ export default class CartList extends Component {
 				pizzas: allPizzas,
 				status: localStorage.getItem('list') ? true : false
 			}))
-			window.addEventListener('storage', this.localStorageUpdated)
+			// window.addEventListener('storage', this.localStorageUpdated)
 		}
-
-		this.scrollBarExists();
-	}
-
-	scrollBarExists() {
-		const node = ReactDOM.findDOMNode(this);
-		const list = node.querySelector('.pizzaList');
-		console.log(list.scrollHeight, list.clientHeight);
-
-		if(list.scrollHeight > list.clientHeight) {
-			console.log(true);
-		}
-		else {
-			console.log(false);
-		}
-	}
-
-	renderPizzasInList() {
-		let items = `[${localStorage.getItem('list')}]`;
-		let allPizzas = JSON.parse(items);
-		this.setState(() => ({
-			pizzas: [...allPizzas],
-			test: []
-		}))
 	}
 
 	totalAmountPizza() {
@@ -73,23 +47,24 @@ export default class CartList extends Component {
 	}
 
 	removePizza = (_, index) => {
-		let newList = this.state.pizzas;
-		const amountForPizza = newList[index].amount;
+		const list = `[${localStorage.getItem('list')}]`;
+		const allPizzas = JSON.parse(list);
+		const amountForPizza = allPizzas[index].amount;
 		const newAmount = amountForPizza - 1;
 
 		if (newAmount <= 0) {
-			newList.splice(index, 1);
+			allPizzas.splice(index, 1);
 		}
 		else {
-			newList[index].amount = `${newAmount}`;
+			allPizzas[index].amount = `${newAmount}`;
 		}
 
-		const stringifiedList = JSON.stringify(newList);
+		const stringifiedList = JSON.stringify(allPizzas);
 		const result = stringifiedList.substring(1, stringifiedList.length - 1);
-		newList.length <= 0 ? localStorage.removeItem('list') : localStorage.setItem('list', result);
+		allPizzas.length <= 0 ? localStorage.removeItem('list') : localStorage.setItem('list', result);
 
 		this.setState({
-			pizzas: newList
+			pizzas: allPizzas
 		});
 	}
 
@@ -107,21 +82,24 @@ export default class CartList extends Component {
 	}
 
 	detectPizzas(elem) {
-		console.dir(elem.target);
-
 		let showArrow = false;
 
-		console.log(elem.target.scrollTop >= (elem.target.scrollHeight - elem.target.offsetHeight), elem.target.scrollTop, (elem.target.scrollHeight - elem.target.offsetHeight));
-
-		if (elem.target.scrollTop >= (elem.target.scrollHeight - elem.target.offsetHeight - 25)) {
+		if (elem.target.scrollTop >= (elem.target.scrollHeight - elem.target.offsetHeight - 25))
 			showArrow = false;
-		}
 		else
 			showArrow = true;
 
 		this.setState({
 			showArrow: showArrow
 		})
+	}
+
+	clearCartList = () => {
+		this.setState({
+			pizzas: []
+		})
+
+		localStorage.removeItem('list');
 	}
 
 	updateState(value) {
@@ -138,8 +116,8 @@ export default class CartList extends Component {
 					</div>
 					<ul className='pizzaList' onScroll={(e) => this.detectPizzas(e)}>
 						{!localStorage.getItem('list') ? <li className='cartListItem'>There are no items in your cart</li> : ''}
-						{this.state.pizzas[0] != null ? this.state.pizzas.map((pizza, i) => {
-							return <li className='cartListItem' key={i} onClick={this.renderPizzasInList}>
+						{localStorage.getItem('list') ? JSON.parse(`[${localStorage.getItem('list')}]`).map((pizza, i) => {
+							return <li className='cartListItem' key={i}>
 								<img src={require('../../images/' + pizza.img)} className='cartListImage' alt={pizza.name} />
 								<div>
 									<p>{pizza.name}</p>
@@ -149,11 +127,15 @@ export default class CartList extends Component {
 								</div>
 							</li>
 						}) : ''}
-						<img src={Arrow} alt='arrow down' className={`arrowDown${!this.state.showArrow ? ' arrowDownHide': ''}`} />
+						<img src={Arrow} alt='arrow down' className={`arrowDown${!this.state.showArrow ? ' arrowDownHide' : ''}`} />
 					</ul>
-					{localStorage.getItem('list') ? <div className='checkout'><span className='cartListTotal'>Total amount: €{this.totalAmountPizza().toFixed(2)}</span>
-
-						<Button linkClass='checkoutLink' customClass='buttonPrimary' link={localStorage.getItem('user') ? '/checkout/overview' : '/checkout'} onClick={this.saveTotalAmount}>Checkout</Button></div> : ''}
+					{localStorage.getItem('list') ?
+						<div className='checkout'>
+							<span className='cartListTotal'>Total amount: €{this.totalAmountPizza().toFixed(2)}</span>
+							<Button customClass='buttonPrimary checkoutErase' onClick={this.clearCartList}><FontAwesomeIcon icon='undo' /></Button>
+							<Button linkClass='checkoutLink' customClass='buttonPrimary' link={localStorage.getItem('user') ? '/checkout/overview' : '/checkout'} onClick={this.saveTotalAmount}>Checkout</Button>
+						</div>
+					: ''}
 				</div>
 			</>
 		)

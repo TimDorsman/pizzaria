@@ -5,13 +5,14 @@ import RouteURL from './components/route/route'
 import Footer from './components/footer/footer'
 import CartList from './components/cartlist/cartlist'
 import './css/App.css';
+import './general/main.scss';
 
 //Library
 import { library } from '@fortawesome/fontawesome-svg-core'
 // import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
-import { faIgloo, faShoppingCart, faTimes } from '@fortawesome/free-solid-svg-icons'
+import { faIgloo, faShoppingCart, faTimes, faUndo } from '@fortawesome/free-solid-svg-icons'
 
-library.add(faIgloo, faShoppingCart, faTimes)
+library.add(faIgloo, faShoppingCart, faTimes, faUndo)
 
 class App extends Component {
 	constructor() {
@@ -22,9 +23,11 @@ class App extends Component {
 	}
 
 	showCart = (status) => {
-		this.setState({
-			showCart: status
-		})
+		this.setState(state => ({
+			showCart: !state.showCart
+		}))
+
+		console.log('showCart called', this.state.showCart);
 	}
 
 	render() {
@@ -32,8 +35,8 @@ class App extends Component {
 			<Router>
 				<div className='App'>
 					<div className="cartListOverlay"></div>
-					<Header />
-					<CartList data={localStorage.getItem('list')} refs="child" showCart={this.showCart}/>
+					<Header showCart={this.showCart} />
+					<CartList data={localStorage.getItem('list')} refs="child" status={this.state.showCart}/>
 					<div className='content'>
 						<RouteURL />
 					</div>

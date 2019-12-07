@@ -10,10 +10,10 @@ export default class Button extends Component {
         }
     }
     render() {
-        const { link, customClass, onClick, type, classLink, children } = this.props;
+        const { link, customClass, onClick, type, linkClass, children } = this.props;
         return (
             link ?
-            <a href={link} className={`buttonLink ${classLink ? classLink : ''}`}>
+            <a href={link} className={`buttonLink ${linkClass}`}>
             <button className={customClass} onClick={onClick} type={type}>{children}</button>
             </a>
             :

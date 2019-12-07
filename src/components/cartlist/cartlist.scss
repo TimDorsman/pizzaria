@@ -113,6 +113,11 @@
     justify-content: space-between;
     align-items: center;
     padding: 0 40px;
+
+    &Erase {
+        margin-left: auto;
+        margin-right: 10px;
+    }
 }
 
 @keyframes upAndDown {

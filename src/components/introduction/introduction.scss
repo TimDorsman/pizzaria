@@ -2,12 +2,25 @@
 .introduction {
     margin: auto;
     padding: 20px;
-    border: 10px dashed gray;
+    border: 10px solid gray;
     background: rgba(255, 255, 255, 0.8);
     font-family: 'Fira Sans', sans-serif;
 
     > * {
         color: #000;
+    }
+
+    &Subtitle {
+        display: inline-block;
+        padding: 0 20px 10px 0;
+        border-bottom: 2px outset red;
+        font-size: 20px;
+        margin-bottom: 15px;
+    }
+
+    &Text {
+        width: 60%;
+        text-align: justify;
     }
 
     &Button {
