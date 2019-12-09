@@ -23,6 +23,10 @@ export default class Overview extends Component {
         this.setState({
             orderlist: array
         });
+
+        if(!localStorage.getItem('user') || !localStorage.getItem('list')) {
+            window.history.back();
+        }
     }
     render() {
         return (

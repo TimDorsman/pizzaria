@@ -18,10 +18,6 @@ export default class Pizza extends Component {
         this.addToCart = this.addToCart.bind(this)
     }
 
-    componentDidMount() {
-        console.log(this.props.data);
-    }
-
     showCover(e) {
         $(e.target).siblings('.pizzaCover').fadeIn();
     }

@@ -18,11 +18,11 @@ export default class Form extends Component {
         const inputs = document.querySelectorAll('.userInput');
 
         const userData = {
-            firstname: inputs[0].value,
-            lastname: inputs[1].value,
-            email: inputs[2].value,
-            phone: inputs[3].value,
-            adress: inputs[4].value
+            Firstname: inputs[0].value,
+            Lastname: inputs[1].value,
+            Email: inputs[2].value,
+            Phone: inputs[3].value,
+            Adress: inputs[4].value
         }
 
         const strUserData = JSON.stringify(userData);

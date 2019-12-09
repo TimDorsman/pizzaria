@@ -1,3 +1,9 @@
-.userinfo {
-    text-shadow: 1px 1px black;
+@import '../../general/colors.scss';
+
+.userInfo {
+    text-shadow: 1px 1px $black;
+
+    &Value {
+        color: $light-grey;
+    }
 }

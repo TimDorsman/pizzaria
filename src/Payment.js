@@ -19,15 +19,11 @@ export default class Payment extends Component {
         window.location.href = '/pizzas'
     }
 
-    isOptionChecked() {
-        const radio = document.querySelectorAll('.paymentRadio');
-
-        for(let i = 0; i < radio.length; i++) {
-            if(radio[i].checked) {
-                this.setState({
-                    isChecked: true
-                })
-            }
+    isOptionChecked(e) {
+        if(e.target.checked) {
+            this.setState({
+                isChecked: true
+            })
         }
     }
 
@@ -37,8 +33,8 @@ export default class Payment extends Component {
                 <ul className='paymentOptions'>
                 {this.state.paymentoptions.map((option, i) => {
             return  <li className='option' key={i}>
-                        <label for={option.name} className='optionLabel'>
-                            <input type="radio" id={option.name}defaultValue={option.name} name='payment' className='paymentRadio' onClick={this.isOptionChecked}/>
+                        <label htmlFor={option.name} className='optionLabel'>
+                            <input type="radio" id={option.name}defaultValue={option.name} name='payment' className='paymentRadio' onClick={(e) => this.isOptionChecked(e)}/>
                             <img src={require(`./images/${option.img}`)} className='paymentImage' alt={option.name} />
                             <p>{option.name}</p>
                         </label>

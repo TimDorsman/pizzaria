@@ -13,12 +13,12 @@ export default class UserInfo extends Component {
 
     render() {
         return (
-            <div className='userinfo'>
-                {Object.entries(this.state.data).map((entry, i) => {
-                    let key = entry[0];
-                    let value = entry[1];
-            return  <div key={i}>
-                        <p>{key}: {value}</p>
+            <div className='userInfo'>
+                {Object.entries(this.state.data).map((entry) => {
+                    const key = entry[0];
+                    const value = entry[1];
+            return  <div key={key}>
+                        <p>{key}: <span className='userInfoValue'>{value}</span></p>
                     </div>
                 })}
 

@@ -5,7 +5,7 @@ import './orderlist.scss';
 export default class OrderList extends Component {
     render() {
         return (
-            <div className='orderlist'>
+            <div className='orderList'>
 				<ul className='order'>
 				{!localStorage.getItem('list') ? <li>There are no items in your cart</li> : '' }
 					{this.props.data != null ? this.props.data.map((pizza, i) => {

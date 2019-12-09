@@ -1,11 +1,14 @@
-.orderlist {
-    max-height: 50vh;
-    overflow: auto;
-    border: 1px solid #FFF;
-    background: #eee198;
-}
-
 .order {
     padding: 0;
     margin: 0;
+
+    &List {
+        max-height: 50vh;
+        overflow: auto;
+        background: #eee198;
+    }
+
+    .cartListItem {
+        border: 1px solid #FFF;
+    }
 }
