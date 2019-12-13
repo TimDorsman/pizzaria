@@ -34,20 +34,16 @@ export default class Form extends Component {
     validate() {
         const inputs = document.querySelectorAll('.userInput');
         const arr = [];
+        let cond = false;
 
         inputs.forEach(el => arr.push(el))
-
         const results = arr.filter(input => input.value !== '');
-        if (results.length === inputs.length) {
-            this.setState({
-                continue: true
-            })
-        }
-        else {
-            this.setState({
-                continue: false
-            })
-        }
+
+        results.length === inputs.length ? cond = true : cond = false;
+
+        this.setState({
+            continue: cond
+        })
     }
 
     render() {

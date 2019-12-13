@@ -1,3 +1,5 @@
+@import '../../general/mixins.scss';
+
 .cartList {
     position: fixed;
     background: #f1eda8;
@@ -117,6 +119,12 @@
     &Erase {
         margin-left: auto;
         margin-right: 10px;
+    }
+}
+
+@include Phone {
+    .checkout {
+        padding: 0 20px;
     }
 }
 

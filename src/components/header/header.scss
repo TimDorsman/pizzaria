@@ -1,3 +1,5 @@
+@import '../../general/mixins.scss';
+
 .header {
     background: url('../../images/checker.jpg');
     &Title {
@@ -45,9 +47,16 @@
             margin-left: 0;
         }
 
-        &Link { 
+        &Link {
             color: #FFF;
             text-decoration: none;
         }
+    }
+}
+
+@include Phone {
+    .shoppingCart {
+        width: 100%;
+        text-align: center;
     }
 }
